@@ -1,0 +1,4 @@
+numpy==1.19.0
+openpyxl==3.0.7
+PyQt5==5.15.7
+pyqtgraph==0.11.1
