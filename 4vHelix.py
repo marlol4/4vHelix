@@ -15,6 +15,7 @@ from supporting_scripts.load_files import open_ply, open_rpoly, open_ntrail
 from supporting_scripts.load_files import move_along_vector
 from supporting_scripts.vHelix_auto_2 import GenerateJson
 from supporting_scripts.seq_designer import seq_designer
+from supporting_scripts.load_files import rout
 
 
 class Ui_MainWindow(object):
@@ -45,7 +46,7 @@ class Ui_MainWindow(object):
         self.pushButton_estimatebaseuse = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_estimatebaseuse.setGeometry(QtCore.QRect(10, 70, 90, 40))
         self.pushButton_estimatebaseuse.setObjectName("pushButton_estimate_base_use")
-        self.pushButton_estimatebaseuse.clicked.connect(self.AddAllHighlight)
+        self.pushButton_estimatebaseuse.clicked.connect(lambda: self.Rout_Button_func(self.doubleSpinBox.value()))
 
         self.doubleSpinBox = QtGui.QDoubleSpinBox(self.centralwidget)
         self.doubleSpinBox.setGeometry(QtCore.QRect(110, 70, 90, 40))
@@ -371,6 +372,20 @@ class Ui_MainWindow(object):
         # Clear rpoly
         if Rpoly_Object.plotted == True:
             self.rpoly.ClearScreen()
+
+    def Rout_Button_func(self, scaling_val):
+
+        if Ply_Object.exists == True:
+            # Create new instance of Ply object
+            #self.ply = Ply_Object(self.glViewer)
+            #self.ply.OpenPly()
+            #print(Ply_Object.)
+            file_path = QtWidgets.QFileDialog.getOpenFileName()
+            rout(str(file_path[0]), scaling_val)
+        else:
+            QMessageBox.critical(self.centralwidget, "Error",
+                                 "Please open a Ply file!")
+            print("Please open a ply file!")
 
 
 class ScaffoldSelectWindow(QWidget):
