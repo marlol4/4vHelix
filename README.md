@@ -46,3 +46,12 @@ The software will run BSCOR and it will output the files for the design. To rein
 To run the sequence designed the cadnano file needs to present a break, for the scaffold to start and finish. The workflow to run the sequence designer is as follow:
 - Press "Run sequence designer"
 - Select which scaffold you want to use (if your desired scaffold is not in here, you can simply add it to the scaffold_files folder).
+
+## Citing 
+
+Please cite this publication for any work that uses this software:
+
+**Computer-Aided Design of A-Trail Routed Wireframe DNA Nanostructures with Square Lattice Edges**\
+Marco Lolaico, Sebbe Blokhuizen, Boxuan Shen, Yang Wang, and Björn Högberg\
+ACS Nano 2023 17 (7), 6565-6574\
+DOI: 10.1021/acsnano.2c11982\
